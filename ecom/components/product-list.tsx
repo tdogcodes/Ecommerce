@@ -18,7 +18,7 @@ export const ProductList = ({ products }: Props) => {
     const descriptionMatch = product.description
       ? product.description.toLowerCase().includes(term)
       : false;
-      return(nameMatch || descriptionMatch55)
+      return(nameMatch || descriptionMatch)
   });
 
   return (
@@ -33,9 +33,9 @@ export const ProductList = ({ products }: Props) => {
         />
       </div>
       <ul className="flex flex-wrap justify-center mt-6">
-        {filteredProducts.map((product) => {
+        {filteredProducts.map((product, i) => {
           return (
-            <li key={product.id} className="w-100 my-2 mx-2">
+            <li key={i} className="w-60 lg:w-100 my-2 mx-2">
               <ProductCard product={product} />
             </li>
           );

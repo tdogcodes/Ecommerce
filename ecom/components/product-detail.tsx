@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import Stripe from 'stripe'
 import Image from 'next/image'
@@ -26,9 +25,9 @@ export const ProductDetail = ({product} : Props) => {
     })
   }
 
-  return <div className="container mx-auto px-4 py-8 flex flex-col md:flex-row gap-8 items-center">
+  return <div className="flex mt-26 sm:flex-col md:flex-row justify-center items-center sm:gap-8 md:gap-12 p-4">
     {product.images && product.images[0] && (
-          <div className="relative h-96 w-full md:w-1/2 rounded-lg overflow-hidden">
+          <div className="relative h-100 w-100 rounded-lg overflow-hidden">
             <Image
               src={product.images[0]}
               alt={product.name}
@@ -39,12 +38,12 @@ export const ProductDetail = ({product} : Props) => {
           </div>
         )}
 
-        <div className="md:w-1/2">
-            <h1  className="text-3xl font-bold mb-2">{product.name}</h1>
-            {product.description && <p className="text-gray-700 mb-2">{product.description}</p>}
+        <div>
+            <h1  className="text-3xl font-bold pb-2">{product.name}</h1>
+            {product.description && <p className="text-gray-700 pb-2">{product.description}</p>}
             {price && price.unit_amount && 
-            <p className='text-lg font-semibold text-gray-900 mb-2'>${(price.unit_amount! / 100).toFixed(2)}</p>}
-          <div className="flex items-center space-x-4">
+            <p className='text-lg font-semibold text-gray-900 pb-2 text-center'>${(price.unit_amount! / 100).toFixed(2)}</p>}
+          <div className="flex justify-center items-center gap-2">
             <Button onClick={()=> removeItem(product.id)} variant='outline'>-</Button>
             <span className="text-lg font-semibold">{quantity}</span>
             <Button onClick={onAddItem}>+</Button>

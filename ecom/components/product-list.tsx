@@ -42,7 +42,7 @@ export const ProductList = ({ products }: Props) => {
         })}
         <span className="text-center text-xl text-gray-600 font-bold tracking-tight md:text-2xl my-6">
           {filteredProducts.length == 0 &&
-            "We don't have what your searching for"}
+            "We couldn't find that one, try another search"}
         </span>
       </ul>
     </div>

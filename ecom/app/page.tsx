@@ -13,7 +13,10 @@ export default async function Home() {
   console.log(products);
   return (
     <div>
-      <section className="rounded bg-neutral-100 py-8 sm:py-12">
+      <section
+        className="rounded bg-neutral-100 py-8 sm:py-12"
+        style={{ maskImage: "linear-gradient(to top, transparent, black 10%" }}
+      >
         <div className="mx-auto grid grid-cols-1 items-center justify-items-center gap-8 px-8 sm:px-16 md:grid-cols-2">
           <div className="max-w-md space-y-4">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
@@ -44,8 +47,11 @@ export default async function Home() {
           />
         </div>
       </section>
-      <section className="py-8">
-        <Carousel products={products.data}/>
+      <section className="py-3">
+        <Carousel products={products.data} />
+      </section>
+      <section className="flex justify-center items-center pt-9">
+        <h2 className="text-3xl font-bold tracking-tight md:text-4xl ">20% of all sales go to SOMEFOUNDATION :D</h2>
       </section>
     </div>
   );

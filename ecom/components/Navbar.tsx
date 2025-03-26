@@ -29,18 +29,18 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link
           href="/"
-          className="text-2xl hover:text-blue-600 font-bold tracking-tight"
+          className="text-2xl hover:text-blue-600 font-bold tracking-tight transition-all duration-300 ease-in-out"
         >
           Leftwing Patriots
         </Link>
         <div className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-blue-600 font-semibold">
+          <Link href="/" className="hover:text-blue-600 font-semibold transition-all duration-300 ease-in-out">
             Home
           </Link>
-          <Link href="/products" className="hover:text-blue-600 font-semibold">
+          <Link href="/products" className="hover:text-blue-600 font-semibold transition-all duration-300 ease-in-out">
             Products
           </Link>
-          <Link href="/checkout" className="hover:text-blue-600 font-semibold">
+          <Link href="/checkout" className="hover:text-blue-600 font-semibold transition-all duration-300 ease-in-out">
             Checkout
           </Link>
         </div>

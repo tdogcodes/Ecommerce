@@ -8,6 +8,8 @@ import {
 } from "@heroicons/react/24/outline";
 import { useCartStore } from "@/store/cart-store";
 import { Button } from "./ui/button";
+import donkey from "@/public/donkey.svg";
+import Image from "next/image";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
@@ -25,28 +27,35 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow">
+    <nav className="sticky top-0 z-50 bg-blue-200 shadow">
       <div className="container mx-auto flex items-center justify-between px-4 py-4">
         <Link
           href="/"
-          className="text-2xl hover:text-blue-600 font-bold tracking-tight transition-all duration-300 ease-in-out"
+          className="text-2xl hover:text-black/50 font-bold transition-all duration-300 ease-in-out"
         >
+          <Image
+            src={donkey}
+            alt="Donkey Logo"
+            width={36}
+            height={36}
+            className="inline-block mb-2 p-0"
+          />
           Leftwing Patriots
         </Link>
         <div className="hidden md:flex space-x-6">
-          <Link href="/" className="hover:text-blue-600 font-semibold transition-all duration-300 ease-in-out">
+          <Link href="/" className="hover:text-black/50 text-xl font-semibold transition-all duration-300 ease-in-out">
             Home
           </Link>
-          <Link href="/products" className="hover:text-blue-600 font-semibold transition-all duration-300 ease-in-out">
+          <Link href="/products" className="hover:text-black/50 text-xl font-semibold transition-all duration-300 ease-in-out">
             Products
           </Link>
-          <Link href="/checkout" className="hover:text-blue-600 font-semibold transition-all duration-300 ease-in-out">
+          <Link href="/checkout" className="hover:text-black/50 text-xl font-semibold transition-all duration-300 ease-in-out">
             Checkout
           </Link>
         </div>
         <div className="flex items-center space-x-4">
           <Link href="/checkout" className="relative">
-            <ShoppingCartIcon className="h-5 w-5" />
+            <ShoppingCartIcon className="h-8 w-8" />
             {cartCount > 0 && (
               <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs text-white">
                 {cartCount}
